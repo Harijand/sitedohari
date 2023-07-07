@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100vh;
+  box-sizing: border-box;
+   
+    background-image: linear-gradient( to top, #002B5B 10%, #002B5B 60%, #002044 50%, #002044 80%);      
+}
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #002B5B;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    text-align: center;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    display: inline-block;
+    justify-content: center;
+   font-family: 'Belanosima', sans-serif;
+    color: #E4DCCF;
+  
+    padding: 20px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #EA5455;
+    color: rgb(#F9F5EB);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #EA5455;
+    color: #F9F5EB;
+    
+  }
+
+ /* INICIO FOOTER */
+
+
+.main_footer_copy   { background-color:#EA5455;; width:100%; float:left; font-family: 'Lato', sans-serif; text-align:center; padding:1.5em 0em; position: fixed; bottom: 0px; height: 5%;}
+.main_footer_copy p { font-size:1em; color:#E4DCCF; height:10%d; margin: auto;}
+.main_footer_copy .m-b-footer   { margin-bottom:0.5em; }
+.main_footer_copy .by   { font-size:0.96em; }
+.main_footer_copy .by a       { color:#E4DCCF; text-decoration:none; font-weight:600; transition:0.2s; }
+.main_footer_copy .by a:hover { text-decoration:underline; color:#fffb00 }
+.main_footer_copy .by i { font-size:0.96em; margin-right:3px; color:#e82626; }
+/*Responsivo*/
+/*768PX BREAKPOINT*/
+
+
+
+/*login*/
+.wrapper {
+    margin-top:250px;
+    
+  --input-focus: #F9F5EB;
+  --font-color: #E4DCCF;
+  --font-color-sub: #7e7e7e;
+  --bg-color: #002b5b;
+  --bg-color-alt: #7e7e7e;
+  --main-color: #EA5455;
+     display: flex; 
+   flex-direction: column; 
+    align-items: center; 
+    font-family: 'Belanosima';
+}
+/* switch card */
+.switch {
+  transform: translateY(-200px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 50px;
+  height: 20px;
+}
+
+.card-side::before {
+  position: absolute;
+  content: 'Log in';
+  left: -70px;
+  top: 0;
+  width: 100px;
+  text-decoration: underline;
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.card-side::after {
+  position: absolute;
+  content: 'Sign up';
+  left: 70px;
+  top: 0;
+  width: 100px;
+  text-decoration: none;
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-color);
+  transition: 0.3s;
+}
+
+.slider:before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  left: -2px;
+  bottom: 2px;
+  background-color: var(--bg-color);
+  box-shadow: 0 3px 0 var(--main-color);
+  transition: 0.3s;
+}
+
+.toggle:checked + .slider {
+  background-color: var(--input-focus);
+}
+
+.toggle:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.toggle:checked ~ .card-side:before {
+  text-decoration: none;
+}
+
+.toggle:checked ~ .card-side:after {
+  text-decoration: underline;
+}
+
+/* card */ 
+
+.flip-card__inner {
+  width: 300px;
+  height: 350px;
+  position: relative;
+  background-color: transparent;
+  perspective: 1000px;
+    /* width: 100%;
+    height: 100%; */
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.toggle:checked ~ .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.toggle:checked ~ .flip-card__front {
+  box-shadow: none;
+}
+
+.flip-card__front, .flip-card__back {
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: var(--bg-color);
+  gap: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.flip-card__back {
+  width: 100%;
+  transform: rotateY(180deg);
+}
+
+.flip-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  margin: 20px 0 20px 0;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  color: #F9F5EB;
+  font-family: 'Belanosima';
+}
+
+.flip-card__input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px;
+  outline: none;
+}
+
+.flip-card__input::placeholder {
+  color: var(--font-color-sub);
+  opacity: 0.8;
+}
+
+.flip-card__input:focus {
+  border: 2px solid var(--input-focus);
+}
+
+.flip-card__btn:active, .button-confirm:active {
+  box-shadow: 0px 0px var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+.flip-card__btn {
+  margin: 20px 0 20px 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
+} 
+
+
+ 
+ /*Hover & focus*/
+ .field input:focus::placeholder {
+  opacity: 0;
+  transition: opacity .3s;
+ }
+ 
+ .btn:hover {
+  background-color: #5e6681;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+ }
+ 
+ .btn-link:hover {
+  color: #ffeba7;
+ }
+ 
